@@ -5,16 +5,16 @@ import type {S3Event} from "aws-lambda";
 
 const sqsClient = new SQSClient({ 
     credentials: {
-        accessKeyId: "AKIAU72LF4JRKEDAKCOL",
-        secretAccessKey: "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"
+        accessKeyId: "XXXXXXX",
+        secretAccessKey: "XXXXXXXX"
     },
     region: "ap-south-1" 
 });
 
 const ecsClient = new ECSClient({
     credentials: {
-        accessKeyId: "AKIAU72LF4JRKEDAKCOL",
-        secretAccessKey: "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"
+        accessKeyId: "XXXXXX",
+        secretAccessKey: "XXXXXXXXXX"
     },
     region: "ap-south-1" 
 })
@@ -67,16 +67,16 @@ async function init() {
 
                     const runTaskCommand = new RunTaskCommand({
                         taskDefinition: 
-                        'arn:aws:ecs:ap-south-1:343218184802:task-definition/video-transcoder',
+                        'arn:aws:ecs:ap-south-1:XXXXXX:task-definition/video-transcoder',
                         cluster: 
-                        'arn:aws:ecs:ap-south-1:343218184802:cluster/dev',
+                        'arn:aws:ecs:ap-south-1:XXXXXX:cluster/dev',
                         launchType:
                         "FARGATE",
                         networkConfiguration: {
                             awsvpcConfiguration: {
                                 assignPublicIp: 'ENABLED',
-                                securityGroups: ['sg-0f25b6d6838534c23'],
-                                subnets: ['subnet-0bb709adccab0558d','subnet-0e429c145b4ef7206','subnet-070e4bcb57d1e79b9']
+                                securityGroups: ['sg-XXXXX'],
+                                subnets: ['subnet-XXXXX','subnet-XXXXX','subnet-XXXX']
                             },
                         },
                         overrides:{

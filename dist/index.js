@@ -13,15 +13,15 @@ const client_sqs_1 = require("@aws-sdk/client-sqs");
 const client_ecs_1 = require("@aws-sdk/client-ecs");
 const sqsClient = new client_sqs_1.SQSClient({
     credentials: {
-        accessKeyId: "XXXXXXXXXX",
-        secretAccessKey: "XXXXXXXXXXX"
+        accessKeyId: "XXXXXXX",
+        secretAccessKey: "XXXXXXXX"
     },
     region: "ap-south-1"
 });
 const ecsClient = new client_ecs_1.ECSClient({
     credentials: {
-        accessKeyId: "XXXXXXXXXXX",
-        secretAccessKey: "XXXXXXXXXXX"
+        accessKeyId: "XXXXXX",
+        secretAccessKey: "XXXXXXXXXX"
     },
     region: "ap-south-1"
 });
@@ -66,14 +66,14 @@ function init() {
                         const { s3 } = record;
                         const { bucket, object: { key } } = s3;
                         const runTaskCommand = new client_ecs_1.RunTaskCommand({
-                            taskDefinition: 'arn:aws:ecs:ap-south-1:343218184802:task-definition/video-transcoder',
-                            cluster: 'arn:aws:ecs:ap-south-1:343218184802:cluster/dev',
+                            taskDefinition: 'arn:aws:ecs:ap-south-1:XXXXXX:task-definition/video-transcoder',
+                            cluster: 'arn:aws:ecs:ap-south-1:XXXXXX:cluster/dev',
                             launchType: "FARGATE",
                             networkConfiguration: {
                                 awsvpcConfiguration: {
                                     assignPublicIp: 'ENABLED',
-                                    securityGroups: ['XXXXXXXXXX'],
-                                    subnets: ['subnet-XXX', 'subnet-XXX', 'subnet-XXX']
+                                    securityGroups: ['sg-XXXXX'],
+                                    subnets: ['subnet-XXXXX', 'subnet-XXXXX', 'subnet-XXXX']
                                 },
                             },
                             overrides: {
