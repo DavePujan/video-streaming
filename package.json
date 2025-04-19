@@ -1,0 +1,30 @@
+{
+  "name": "video-streaming",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  
+  "scripts": {
+    "dev": "tsc-watch --onSuccess \"node dist/index\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavePujan/video-streaming.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DavePujan/video-streaming/issues"
+  },
+  "homepage": "https://github.com/DavePujan/video-streaming#readme",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.148",
+    "tsc-watch": "^6.2.1",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "@aws-sdk/client-ecs": "^3.787.0",
+    "@aws-sdk/client-sqs": "^3.782.0"
+  }
+}
